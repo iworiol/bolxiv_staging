@@ -23,8 +23,6 @@ html.app-restoring:not(.app-shell-ready) .startup-shell{display:grid;position:fi
 .startup-status{display:none}
 html.app-restoring .startup-status{display:block;position:fixed;right:16px;bottom:16px;z-index:20000;padding:10px 16px;border:1px solid #d0d4da;border-radius:6px;background:#fff;color:#33445f;font:14px 'Yu Gothic UI',sans-serif;box-shadow:0 2px 10px #0001}
 @media(max-width:850px){
- html.app-restoring .app{visibility:hidden}
- html.app-restoring .startup-shell{display:grid;position:fixed;inset:0;grid-template-rows:64px 1fr;background:#f3f4f6}
  .startup-shell-layout{grid-template-columns:1fr}
  .startup-shell-pane{display:none}
  .startup-shell-header{padding:0 12px}
