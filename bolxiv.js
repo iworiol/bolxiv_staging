@@ -50,6 +50,7 @@ window.addEventListener('load',revealRestoredApp,{once:true});
   window.Bolxiv.ready=false;window.Bolxiv.startupError=String(error?.message||error);
   window.boardStorageStarting=false;console.error(error);
   document.documentElement.classList.remove('app-restoring');
+  document.body.style.removeProperty('display');
   const panel=document.createElement('main');panel.id='startupError';panel.setAttribute('role','alert');
   const title=document.createElement('h1');title.textContent='ツールを起動できませんでした';
   const message=document.createElement('p');message.textContent='再読み込みしてください。解消しない場合は、同じ配布物のファイル一式で更新してください。保存データは削除されません。';
@@ -63,6 +64,7 @@ window.addEventListener('load',revealRestoredApp,{once:true});
   document.querySelector('.app')?.setAttribute('inert','');
   document.body.classList.add('session-blocked');
   document.documentElement.classList.remove('app-restoring');
+  document.body.style.removeProperty('display');
   const panel=document.createElement('main');panel.id='sessionBlocked';panel.setAttribute('role','alert');
   const title=document.createElement('h1');title.textContent='別のタブですでに開いています';
   const message=document.createElement('p');message.textContent='このタブで使う場合は、先に開いたタブを閉じてから再試行してください。';
@@ -89,6 +91,7 @@ window.addEventListener('load',revealRestoredApp,{once:true});
  const stylesReady=window.BolxivIntegrityStyles.then(()=>{
   for(const link of styles)if(link.media==='print')link.media='all';
   document.documentElement.classList.add('app-shell-ready');
+  document.body.style.removeProperty('display');
  });
  // Fetch scripts and restore IndexedDB without waiting for slow CSS transfers.
  stylesReady.catch(showStartupError);
