@@ -8,6 +8,7 @@
   if(window.Bolxiv?.showStartupError){window.Bolxiv.showStartupError(error);return}
   window.boardStorageStarting=false;window.Bolxiv={ready:false,startupError:String(error.message||error)};
   document.documentElement.classList.remove('app-restoring');
+  document.body.style.removeProperty('display');
   const panel=document.createElement('main');panel.id='startupError';panel.setAttribute('role','alert');
   const title=document.createElement('h1');title.textContent='ファイルを確認できませんでした';
   const message=document.createElement('p');message.textContent=String(error.message||error);
